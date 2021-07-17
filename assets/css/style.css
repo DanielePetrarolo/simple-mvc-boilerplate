@@ -1,0 +1,510 @@
+html,
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Cutive Mono', monospace;
+    letter-spacing: -0.05em;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    line-height: 32px;
+    transition: all 200ms linear;
+    color: #333333;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+p a{
+    font-weight: bold;
+}
+hr{
+    height: 2px;
+    border: none;
+    margin: 30px 0;
+    background: #EEEEEE;
+}
+
+.clear{
+    clear: both;
+}
+
+/*/ TYPO /*/
+h1{
+    font-size: 3.5vw;
+    line-height: 4vw;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+h2{
+    font-size: 2vw;
+    line-height: 3vw;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+h3{
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+h4{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+}
+h1:last-child,
+h2:last-child{
+    margin-bottom: 0;
+}
+
+
+/*/ GENERAL /*/
+#cover{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background: #FFFFFF;
+    pointer-events: none;
+    position: fixed;
+}
+section.content{
+    padding: 6vw 4vw;
+    border-top: 2px solid #EEEEEE;
+}
+section.content-slim{
+    padding: 60px 30px;
+    border-top: 2px solid #EEEEEE;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+
+
+/*/ INTRO /*/
+.block-intro{
+    height: 60vh;
+    width: 100%;
+    background: url('../imgs/home/intro.jpg') center top no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+.block-intro__title{
+    left: 8.33vw;
+    color: #FFFFFF;
+    bottom: 6vw;
+    position: absolute;
+}
+.block-intro__title h1,
+.block-intro__title h2{
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+
+
+
+/*/ CUSTOM SCROLLBAR /*/
+.mCSB_container{
+    margin-right: 20px !important;
+}
+.mCSB_dragger_bar{
+    background: #111111 !important;
+}
+.mCSB_draggerRail{
+    background: transparent !important;
+}
+
+
+/*/ CTA /*/
+.cta{
+    cursor: pointer;
+    display: inline-block;
+    padding: 20px 30px;
+    color: #FFFFFF;
+    background: #000000;
+    border-radius: 30px;
+    width: 280px;
+    text-align: center;
+    transition: all 500ms cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+.cta:hover{
+    border-radius: 10px;
+}
+
+.cta-mini{
+    display: inline-block;
+    padding: 5px 10px;
+    border-bottom: 2px solid #000;
+}
+
+
+/*/ GRID /*/
+.grid{
+    width: calc(100% + 2vw);
+    margin: 0 0 0 -1vw;
+}
+.grid::after{
+    content: ' ';
+    display: block;
+    clear: both;
+}
+.grid__el{
+    padding: 0 1vw;
+    float: left;
+}
+.grid__el--spacer{
+    min-height: 1px;
+}
+.grid__el--20{
+    width: 20%;
+}
+.grid__el--25{
+    width: 25%;
+}
+.grid__el--33{
+    width: 33.3%;
+}
+.grid__el--50{
+    width: 50%;
+}
+
+
+
+/*/ HEADER /*/
+#main-logo{
+    position: fixed;
+    top: 0;
+    left: 0;
+        z-index: 99;
+    padding: 16px 12px;
+    background: #ffffff;
+    transition: all 200ms linear;
+}
+#main-logo img{
+    width: 45px;
+    height: auto;
+    transition: all 200ms linear;
+}
+
+#main-navigation{
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 100%;
+    z-index: 9999;
+    position: fixed;
+    background: #FFFFFF;
+    border-left: 2px solid #EEEEEE;
+    transition: background 200ms linear, width 500ms cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+.nav-open #main-navigation{
+    width: 170px;
+}
+#main-toggler{
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    background: #FFFFFF;
+    transition: background 200ms linear;
+}
+.toggler__line{
+    top: 50%;
+    left: 50%;
+    height: 2px;
+    width: 35%;
+    background: #111111;
+    transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    transition: all 500ms cubic-bezier(0.785, 0.135, 0.150, 0.860), background 200ms linear;
+}
+.toggler__line--1{
+    margin-top: -7px;
+}
+.toggler__line--3{
+    margin-top: 7px;
+}
+
+.main-navigation__menu{
+    text-align: right;
+    padding: 25px;
+    margin-top: 68px;
+    border-top: 2px solid #EEEEEE;
+}
+.main-navigation__menu a{
+    opacity: 0;
+    display: inline-block;
+    transform: translateX(-10px);
+    pointer-events: none;
+}
+.main-navigation__menu hr{
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+}
+
+.main-navigation__bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #EEEEEE;
+}
+
+
+/*/ PAGE /*/
+.page{
+    padding-right: 70px;
+    min-height: 50vh;
+    transition: transform 500ms cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+.nav-open .page{
+    transform: translate3d(-100px, 0, 0);
+}
+
+
+
+/*/ TABLE /*/
+table{
+    width: 100%
+}
+tr{
+    border-top: 2px solid #EEEEEE;
+    padding: 20px;
+}
+td{
+    padding: 10px;
+}
+
+
+
+/*/ FORM ELEMENTS /*/
+input,
+textarea{
+    border: none;
+    padding: 10px 20px;
+    background: #EEEEEE;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: 'Cutive Mono', monospace;
+}
+input[type="submit"]{
+    font-weight: normal;
+}
+
+
+select {
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #EEEEEE;
+    background-image: none;
+
+    padding: 10px 20px;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Cutive Mono', monospace;
+}
+select[readonly]{
+    pointer-events: none;
+}
+
+form{
+    text-align: left;
+}
+form label{
+    float: left;
+    margin: 5px;
+    width: calc(100% - 10px);
+}
+form input,
+form textarea,
+form select{
+    float: left;
+    width: calc(50% - 10px);
+    margin: 5px;
+}
+form input.small,
+form select.small{
+    width: calc(25% - 10px);
+}
+form input[type="submit"]{
+    float: none;
+    margin: 40px auto;
+    display: block;
+}
+form textarea{
+    width: calc(100% - 10px);
+    resize: none;
+    height: 100px;
+    padding: 20px;
+}
+
+
+
+/*/ DARK MODE TOGGLER /*/
+.dark-mode__toggler{
+    bottom: 15px;
+    right: 15px;
+    padding: 10px;
+    border-radius: 50%;
+    background: #EEEEEE center center no-repeat;
+    background-size: 50%;;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 500ms cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+.dark-mode__toggler img{
+    width: 25px;
+    transition: all 500ms cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+
+
+/*/ FOOTER /*/
+footer header{
+    font-weight: bold;
+}
+.footer-content{
+    text-align: center;
+    padding: 6vw 8.33vw;
+    border-top: 2px solid #EEEEEE;
+}
+.footer-bottom{
+    padding: 17px;
+    padding-bottom: 16px;
+    text-align: center;
+    border-top: 2px solid #EEEEEE;
+}
+
+
+
+@media (max-width: 991px){
+
+
+    /*/ TYPO /*/
+    h1{
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+    h2{
+        font-size: 24px;
+        line-height: 28px;
+        margin-bottom: 10px;
+    }
+    h3{
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+    h4{
+        font-size: 16px;
+        line-height: 20px;
+    }
+    h1:last-child,
+    h2:last-child{
+        margin-bottom: 0;
+    }
+
+    td{
+        padding: 10px 0;
+    }
+
+    .grid__el{
+        padding: 0;
+    }
+    .grid__el--20{
+        width: 100%;
+    }
+    .grid__el--25{
+        width: 100%;
+    }
+    .grid__el--33{
+        width: 100%;
+    }
+    .grid__el--50{
+        width: 100%;
+    }
+
+    .page{
+        padding-right: 50px;
+    }
+    #main-logo{
+        padding: 11px 7px;
+        border-right: 2px solid #EEEEEE;
+        border-bottom: 2px solid #EEEEEE;
+    }
+    #main-logo img {
+        width: 35px;
+    }
+    #main-navigation{
+        width: 50px;
+    }
+    #main-toggler{
+        width: 48px;
+        height: 48px;
+    }
+    .main-navigation__menu{
+        margin-top: 48px;
+    }
+    .dark-mode__toggler{
+        padding: 7px;
+    }
+    .dark-mode__toggler img{
+        width: 14px;
+    }
+
+    section.content {
+        padding: 20px;
+    }
+
+    .block-intro{
+        height: 35vh;
+    }
+
+    form input,
+    form textarea,
+    form select {
+        float: none;
+        width: 100% !important;
+        margin: 5px;
+    }
+
+
+    .footer-bottom{
+        padding: 8px 0;
+        padding-bottom: 9px;
+    }
+    .footer-content{
+        padding: 0 20px;
+    }
+
+
+    footer .grid__el{
+        margin: 20px 0;
+    }
+    footer .grid__el--spacer{
+        display: none;
+    }
+}
